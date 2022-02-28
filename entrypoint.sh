@@ -67,6 +67,7 @@ SAVED_DIR="${PWD}"
 cd $(dirname "${OPENVPN_CONFIG}")
 mkfifo /openvpn-fifo
 spawn openvpn \
+    --comp-lzo \
     --script-security 2 \
     --config "${OPENVPN_CONFIG}" \
     --up /usr/local/bin/openvpn-up.sh
